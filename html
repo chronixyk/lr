@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apps</title>
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --card:#0f0f0f;
+      --muted:#9aa0a6;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#e6eef8;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:32px;
+    }
+
+    .app-shell{
+      width:min(980px,96vw);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:14px;
+      padding:28px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.7);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:10px;
+      display:grid;place-items:center;
+      background:conic-gradient(from 180deg at 50% 50%, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.025);
+      font-weight:700;font-size:20px;color:var(--muted);
+    }
+    h1{font-size:18px;margin:0}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:16px;margin-top:20px;
+    }
+
+    .tile{
+      background:var(--glass);
+      border-radius:12px;
+      padding:20px;
+      display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+      cursor:pointer;text-decoration:none;color:inherit;
+      border:1px solid rgba(255,255,255,0.02);
+      min-height:150px;
+    }
+    .tile:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .tile:active{transform:translateY(-2px)}
+
+    .tile img{
+      width:64px;height:64px;object-fit:contain;
+    }
+    .tile.large-logo img{
+      width:96px;height:96px;
+    }
+
+    .label{font-weight:600;font-size:16px;text-align:center}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
+
+    .more-btn{
+      display:inline-block;
+      margin-top:12px;
+      padding:8px 16px;
+      background:var(--glass);
+      color:#e6eef8;
+      text-decoration:none;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.05);
+      transition:background .15s ease, transform .15s ease;
+    }
+    .more-btn:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <main class="app-shell" role="main">
+    <header>
+     <div class="logo"><img src="https://rickyedit.com/images/logo.png" alt="Apps Logo" style="width:100%;height:100%;object-fit:contain;border-radius:10px;"></div>
+      <div>
+        <h1>Apps</h1>
+      </div>
+    </header>
+
+    <section class="grid">
+      <a class="tile" href="https://www.whatsapp.com/download" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo">
+        <span class="label">WhatsApp</span>
+      </a>
+
+      <a class="tile large-logo" href="https://vivaldi.com/download/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn-icons-png.freepik.com/512/144/144340.png" alt="Vivaldi Browser logo">
+        <span class="label">Vivaldi</span>
+      </a>
+
+      <a class="tile" href="https://github.com/mrpond/BlockTheSpot" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify logo">
+        <span class="label">Spotify</span>
+      </a>
+
+      <a class="tile large-logo" href="https://discord.com/download" target="_blank" rel="noopener noreferrer">
+        <img src="https://static.vecteezy.com/system/resources/previews/018/930/500/non_2x/discord-logo-discord-icon-transparent-free-png.png" alt="Discord logo">
+        <span class="label">Discord</span>
+      </a>
+
+      <a class="tile" href="https://www.epicgames.com/store/en-US/download" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Epic_Games_logo.svg" alt="Epic Games logo">
+        <span class="label">Epic Games</span>
+      </a>
+
+      <a class="tile" href="https://store.steampowered.com/about/" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" alt="Steam logo">
+        <span class="label">Steam</span>
+      </a>
+
+      <a class="tile" href="https://getgreenshot.org/" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Greenshot_logo.svg/1200px-Greenshot_logo.svg.png" alt="Greenshot logo">
+        <span class="label">Greenshot</span>
+      </a>
+
+      <a class="tile" href="https://www.bcuninstaller.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.bcuninstaller.com/assets/logo.png" alt="BCUninstaller logo">
+        <span class="label">BCUninstaller</span>
+      </a>
+
+      <a class="tile" href="https://www.voidtools.com/downloads/" target="_blank" rel="noopener noreferrer">
+        <img src="https://www.voidtools.com/Everything.ico" alt="Everything logo">
+        <span class="label">Everything</span>
+      </a>
+	  
+	  <a class="tile" href="https://notepad-plus-plus.org/downloads/" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Notepad%2B%2B_Logo.svg" alt="Notepad++ logo">
+        <span class="label">Notepad++</span>
+      </a>
+
+      <a class="tile" href="https://github.com/M2Team/NanaZip/releases" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.utdstc.com/icon/b9a/cd7/b9acd7114116209b8d8235351479102f710ff68fc4c8819f73aa1939df4232fb:200" alt="NanaZip logo">
+        <span class="label">NanaZip</span>
+      </a>
+
+      <a class="tile" href="https://www.riotgames.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://images.seeklogo.com/logo-png/41/2/valorant-logo-png_seeklogo-411191.png" alt="Valorant logo">
+        <span class="label">Riot Games</span>
+      </a>
+
+    </section>
+
+    <footer>
+      by @chronixyk
+      <br>
+      <a href="https://mega.nz/folder/uEMkUAJQ#ZhjkrltAz167dDRF6t3ijg" target="_blank" class="more-btn">More</a>
+    </footer>
+  </main>
+</body>
+</html>
